@@ -1,0 +1,230 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+:root {
+    --bg: #050c1c;
+    --card: #0b162e;
+    --border: #132a4d;
+    --neon: #00ffd5;
+    --text: #e6f1ff;
+    --muted: #7aa2c7;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    height: 60px;
+    padding: 0 5%;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(150, 150, 150, 0.5);
+}
+
+.left-header {
+    display: none;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 40px;
+}
+
+.navbar a {
+    color: var(--text);
+    font-size: 13.5px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    display: inline-block;
+    position: relative;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--muted);
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1.2px;
+    background: var(--muted);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: 0.3s ease;
+}
+
+.navbar a:hover::after {
+    transform: scaleX(1);
+}
+
+/* End Of The Header */
+
+section {    
+    min-height: calc(100vh - 60px);
+    padding: 100px 30px 0;
+}
+
+.login-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+.login-box form h2 {
+    font-size: 30px;
+    align-self: center;
+    color: var(--text);
+    margin-bottom: 50px;
+}
+
+.login-box form .input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    position: relative;
+}
+
+.login-box form input {
+    padding: 15px 10px 12px 10px;
+    border-radius: 10px;
+    background-color: var(--card);
+    border: 2px solid var(--border);
+    color: #fff;
+    font-size: 11px;
+}
+
+.login-box form input::placeholder {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.login-box form input:hover {
+    box-shadow: 0 0 10px rgba(150, 150, 150, 0.5);
+}
+
+.login-box form input:focus {
+    box-shadow: 0 0 10px rgba(150, 150, 150, 0.5);
+}
+
+.login-box form .input-box i {
+    color: var(--muted);
+    font-size: 13px;
+    position: absolute;
+    top: 50%;
+    right: 17px;
+    transform: translateY(-50%);
+}
+
+.login-box form .forgot a {
+    color: var(--muted);
+    font-size: 11px;
+    position: absolute;
+    right: 50px;
+}
+
+.login-box form .forgot a:hover,
+.login-box form .register-link a:hover {
+    text-decoration: underline;
+}
+
+.login-box form button {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    align-self: center;
+    padding: 10px 50px;
+    font-size: 11px;
+    border-radius: 15px;
+    background-color: var(--card);
+    border: 2px solid var(--border);
+    color: var(--muted);
+}
+
+.login-box form button:hover {
+    background-color: var(--muted);
+    color: #000;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(150, 150, 150, 0.5);
+}
+
+.login-box form .register-link p {
+    color: #fff;
+    font-size: 10px;
+}
+
+.login-box form .register-link a {
+    color: var(--muted);
+}
+
+@media (min-width: 500px) {
+    section {
+        padding-top: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login-box {
+        border-radius: 16px;
+        width: 100%;
+        max-width: 600px;
+        background-color: var(--card);
+        padding: 40px 30px 50px 30px;
+        position: relative;
+    }
+
+    .login-box form button {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .login-box form .forgot a {
+    position: absolute;
+    right: 50px;
+}
+}
+
+@media (min-width: 620px) {
+    header {
+        width: 100%;
+        padding: 0 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .left-header {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .left-header h1 {
+        font-size: 2.7em;
+        color: #eee;
+    }
+}
